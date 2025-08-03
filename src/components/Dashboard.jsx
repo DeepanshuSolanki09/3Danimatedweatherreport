@@ -10,13 +10,13 @@ const Dashboard = ({ data }) => {
   }
 
   return (
-    <div className="absolute left-0 top-0 h-vh flex flex-col md:flex-row justify-center items-center font-zentry md:p-10 gap-10 py-10">
+    <div className="absolute left-0 top-0 h-vh flex flex-col md:flex-row justify-center items-center font-zentry md:p-10 gap-10 py-10 px-2">
       <div className="flex flex-col w-fit md:w-2/3 h-1/2 items-center justify-center gap-3 mt-12">
         <h1 className="font-medium text-4xl">
           {location.name},{location.region},{location.country}
         </h1>
         <p className="opacity-50 text-lg">{location.localtime}</p>
-        <div className="w-full h-full bg-gradient-to-r from-blue-300/50 to-green-300/50 rounded-lg shadow-lg flex gap-5 jusctify-center items-center px-7 py-5">
+        <div className="w-full h-full bg-gradient-to-r from-blue-300/50 to-green-300/50 rounded-lg shadow-lg flex gap-5 jusctify-center items-center md:px-7 px-2 py-5">
           <div className="w-1/2 flex flex-col items-center">
             <div className="w-1/3 h-1/3">
               <img
@@ -25,10 +25,10 @@ const Dashboard = ({ data }) => {
               />
             </div>
             <h1>{current.condition.text}</h1>
-            <h1 className="text-6xl">{current.temp_c}°C</h1>
+            <h1 className="md:text-6xl text-4xl">{current.temp_c}°C</h1>
             <p className="opacity-50">Feels like: {current.feelslike_c}°C</p>
           </div>
-          <div className="w-1/2 flex justify-around items-center gap-7">
+          <div className="w-1/2 flex flex-col md:flex-row justify-around items-center gap-7">
             <div className="flex flex-col gap-2 justify-center">
               <div className="h-auto">
                 <h1>Humidity</h1>
