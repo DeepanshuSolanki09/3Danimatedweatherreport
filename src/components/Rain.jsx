@@ -16,7 +16,7 @@ import { bufferAttribute } from "three/tsl";
 const Rain = () => {
     //model
   const earth = useRef();
-  const model = useGLTF("public/earth (2).glb");
+  const model = useGLTF("/earth (2).glb");
   extend(OrbitControls);
   const { camera, gl } = useThree();
   useFrame((state, delta) => {

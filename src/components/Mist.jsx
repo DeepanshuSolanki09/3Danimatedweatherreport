@@ -13,7 +13,7 @@ import { Points } from "three";
 
 const Mist = () => {
   const earth = useRef();
-  const model = useGLTF("public/earth (2).glb");
+  const model = useGLTF("/earth (2).glb");
   extend(OrbitControls);
 
   const { camera, gl } = useThree();
