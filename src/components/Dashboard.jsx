@@ -6,12 +6,12 @@ const Dashboard = ({ data }) => {
   const { location, current } = data;
 
   if (data == null || data.location == null || data.current == null) {
-    return <div className="h-dvh flex justify-center items-end font-zentry py-28">loading the report.....</div>;
+    return <div className="h-dvh flex justify-center items-end font-zentry py-28"></div>;
   }
 
   return (
-    <div className="absolute left-0 top-0 h-vh flex flex-col md:flex-row justify-center items-center font-zentry p-10 gap-10">
-      <div className="flex - flex-col w-full md:w-2/3 h-1/2 items-center justify-center gap-3 mt-12">
+    <div className="absolute left-0 top-0 h-vh flex flex-col md:flex-row justify-center items-center font-zentry md:p-10 gap-10 py-10">
+      <div className="flex flex-col w-fit md:w-2/3 h-1/2 items-center justify-center gap-3 mt-12">
         <h1 className="font-medium text-4xl">
           {location.name},{location.region},{location.country}
         </h1>

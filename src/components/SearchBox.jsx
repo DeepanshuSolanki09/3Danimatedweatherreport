@@ -14,10 +14,10 @@ const SearchBox = forwardRef((props,ref1) => {
     }
 
   return (
-    <div ref={ref1} className='absolute bottom-10 right-0 flex flex-col justify-center items-center p-5 translate-x-[-50%] bg-white/50 gap-5 rounded-lg font-zentry box'>
+    <div ref={ref1} className='absolute bottom-10 left-1/2 md:right-0 flex flex-col justify-center items-center p-5 translate-x-[-50%] bg-white/50 gap-5 rounded-lg font-zentry box sm:mx-auto'>
         <h1>Enter The City</h1>
       <input type='text' onChange={(e) => setcity(e.target.value)}
-      className='px-3 py-2 rounded-lg bg-blue-200'
+      className='px-3 py-2 rounded-lg bg-blue-200 w-full'
       ></input>
       <button onClick={getdata}
       className='px-3 py-2 rounded-lg bg-gradient-to-r from-blue-500 to-green-400 w-full'
