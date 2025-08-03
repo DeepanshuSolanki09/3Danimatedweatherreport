@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#root{
+    height: 100dvh;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+body{
+    overflow: hidden;
+}
+
+@layer base{
+     @font-face {
+        font-family: 'zentry';
+        src: url(../public/zentry-regular.woff2) format('woff2');
+    }
+}

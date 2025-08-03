@@ -1,0 +1,47 @@
+import React from "react";
+import { useRef, useState } from "react";
+import {
+  OrbitControls,
+  PointMaterial,
+  Sky,
+  Stars,
+  useAnimations,
+  useGLTF,
+} from "@react-three/drei";
+import { extend, useFrame, useThree } from "@react-three/fiber";
+import { Points } from "three";
+
+const Mist = () => {
+  const earth = useRef();
+  const model = useGLTF("public/earth (2).glb");
+  extend(OrbitControls);
+
+  const { camera, gl } = useThree();
+  useFrame((state, delta) => {
+    earth.current.rotation.y += delta * 0.1;
+  });
+
+
+  return (
+    <>
+      <OrbitControls args={[camera, gl.domElement]} />
+      <mesh>
+        <boxGeometry />
+        <meshBasicMaterial />
+      </mesh>
+      <ambientLight />
+      <Sky
+        distance={4500000000}
+        sunPosition={[1, 0.5, -1]}
+        inclination={0}
+        azimuth={0.25}
+      /> 
+      <primitive ref={earth} object={model.scene} scale={1.5} />
+
+    <fog attach="fog" color="white" near={1} far={10} />
+      
+    </>
+  );
+};
+
+export default Mist;
