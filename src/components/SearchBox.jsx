@@ -6,7 +6,7 @@ const SearchBox = forwardRef((props,ref1) => {
     const [city,setcity] = useState('');
 
     const getdata = async () => {
-        const x = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=7b05272681c7441abbc111830250208&q=${city}`);
+        const x = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=7b05272681c7441abbc111830250208&q=${city}`);
         const d = await x.json();
         props.setdata(d);
         // props.tl.play();
