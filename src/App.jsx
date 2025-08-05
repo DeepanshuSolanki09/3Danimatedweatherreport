@@ -17,23 +17,6 @@ function App() {
 
   const [data,setdata] = useState([]);
   const [show,setshow] = useState(true);
-  // const ref1 = useRef();
-  // const ref2 = useRef();
-  // const tl = useRef();
-
-  // useGSAP(() => {
-  //     tl.current = gsap.timeline({paused:true});
-  //     tl.current.to(ref1.current,{
-  //         transformOrigin:'center center',
-  //           scale:0,
-  //           duration:2,
-  //           ease:'power1.inOut',
-  //     }).to(ref2.current,{
-  //         y:-100,
-  //         duration:2,
-  //         ease:'power1.inout',
-  //     },">")
-  // },[ref1, ref2])
 
   function renderderscene(){
       const condition = data?.current?.condition?.text;
@@ -62,12 +45,6 @@ function App() {
     <>
     <Canvas className="relative left-0 top-0" onCreated={created}>
         <ThreeD />
-        {/* <Mist /> */}
-        {/* <Snow /> */}
-        {/* <Rain /> */}
-        {/* {
-          data != null && data.current.condition.text == 'Patchy rain nearby' || data != null && data.current.condition.text == 'Partly cloudy' || data != null && data.current.condition.text == 'Light rain' ? <Rain /> : data != null && data.current.condition.text == 'Mist' || data != null && data.current.condition.text == 'Overcast' ? <Mist /> : data != null && data.current.condition.text == 'Sunny' || data != null && data.current.condition.text == 'Clear' ? <ThreeD /> : <Snow />
-        } */}
         {renderderscene()}
       </Canvas>
       <div className="h-dvh inset-0 bg-gradient-to-r from-blue-200/10 to-green-200/10 absolute">

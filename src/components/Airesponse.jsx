@@ -35,7 +35,7 @@ const Airesponse = ({data}) => {
     }
     aipower();
   } ,[data]);
-  return <div className="md:size-1/2 w-fit bg-white/50 h-1/2 p-5 rounded-lg backdrop-blur-sm">
+  return <div className="md:size-1/2 w-fit bg-white/50 h-1/2 p-5 rounded-lg backdrop-blur-sm font-sans">
     <h1 className="bg-gradient-to-r from-blue-500 to-green-500 text-transparent bg-clip-text inline-block">Sktcast says: </h1>
     <br></br>{s}
     </div>;
