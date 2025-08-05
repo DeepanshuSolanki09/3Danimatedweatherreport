@@ -15,35 +15,35 @@ function App() {
     state.gl.setClearColor("#000000", 1);
   }
 
-  const [data,setdata] = useState([]);
-  const [show,setshow] = useState(true);
+  const [data, setdata] = useState([]);
+  const [show, setshow] = useState(true);
 
-  function renderderscene(){
-      const condition = data?.current?.condition?.text;
-      const rain = ['Patchy rain nearby','Light rain','Partly cloudy'];
-      const sunny = ['Sunny']
-      const mist = ['Overcast','Mist','Clear']
-      const snow = ['snow']
-      if(condition == null){
-        return <ThreeD />
-      }
-      if(rain.includes(condition)){
-        return <Rain />
-      }
-      if(sunny.includes(condition)){
-        return <ThreeD />
-      }
-      if(mist.includes(condition)){
-        return <Mist />
-      }
-      if(snow.includes(condition)){
-        return <Snow />
-      }
+  function renderderscene() {
+    const condition = data?.current?.condition?.text;
+    const rain = ["Patchy rain nearby", "Light rain", "Partly cloudy"];
+    const sunny = ["Sunny"];
+    const mist = ["Overcast", "Mist", "Clear"];
+    const snow = ["snow"];
+    if (condition == null) {
+      return <ThreeD />;
+    }
+    if (rain.includes(condition)) {
+      return <Rain />;
+    }
+    if (sunny.includes(condition)) {
+      return <ThreeD />;
+    }
+    if (mist.includes(condition)) {
+      return <Mist />;
+    }
+    if (snow.includes(condition)) {
+      return <Snow />;
+    }
   }
 
   return (
     <>
-    <Canvas className="relative left-0 top-0" onCreated={created}>
+      <Canvas className="relative left-0 top-0" onCreated={created}>
         <ThreeD />
         {renderderscene()}
       </Canvas>
@@ -53,7 +53,7 @@ function App() {
       <Navbar show={show} setshow={setshow}/>
       {show ? <SearchBox data={data} setdata={setdata} setshow={setshow}/> : <div></div>}
     </>
-  );  
+  );
 }
 
 export default App;

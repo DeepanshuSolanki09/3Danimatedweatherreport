@@ -37,6 +37,7 @@ const SearchBox = forwardRef((props, ref1) => {
       <input
         type="text"
         onChange={(e) => setcity(e.target.value)}
+        onKeyDown={(e) => e.key === 'Enter' && getdata()}
         className="px-3 py-2 rounded-lg bg-blue-200 w-full"
       ></input>
       <button
